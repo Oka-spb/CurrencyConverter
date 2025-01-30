@@ -18,6 +18,7 @@ class ExchangerService
         }
         $this->collection = collect($rates);
         $this->checkDirectConvertToBaseCurrency($inputData->from);
+        $this->checkDirectConvertToBaseCurrency($inputData->from);
         $this->checkDirectConvertToBaseCurrency($inputData->to);
         $data = $this->searchDirectCurrencyData(
             $inputData->from,
