@@ -14,8 +14,10 @@ class ExchangerService
     {
         if ($inputData->from === $inputData->to) {
             return  $this->directCalc($inputData->amount, 1);
+            return  $this->directCalc($inputData->amount, 1);
         }
         $this->collection = collect($rates);
+        $this->checkDirectConvertToBaseCurrency($inputData->from);
         $this->checkDirectConvertToBaseCurrency($inputData->from);
         $this->checkDirectConvertToBaseCurrency($inputData->to);
         $data = $this->searchDirectCurrencyData(
